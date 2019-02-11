@@ -1,0 +1,14 @@
+---
+repo:
+  - url: https://github.com/tacobayle/vyos.git
+    destLocal: /home/avi/demo/arpLocal/vyos
+    version: v1.04
+  - url: https://github.com/tacobayle/cs.git
+    destLocal: /home/avi/demo/arpLocal/cs
+    version: v1.00
+  - url: https://github.com/tacobayle/aviBootstrap.git
+    destLocal: /home/avi/demo/arpLocal/aviBootstrap
+    version: v1.01
+  - url: https://github.com/tacobayle/aviLscCloud.git
+    destLocal: /home/avi/demo/arpLocal/aviLscCloud
+    version: v1.00

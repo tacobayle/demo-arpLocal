@@ -1,0 +1,17 @@
+---
+- hosts: localhost
+  gather_facts: no
+
+  vars_files:
+    - "vars/params.yml"
+
+  tasks:
+
+  - name: git checkout
+    git:
+      repo: "{{ item.url }}"
+      dest: "{{ item.destLocal }}"
+      version: "{{ item.destLocal }}"
+      force: no
+    ignore_errors: yes
+    loop: "{{ repo }}"

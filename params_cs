@@ -1,0 +1,28 @@
+---
+ifconfigClient:
+  - iface: ens33
+    cidr: 10.1.7.2/24
+
+ifconfigServer:
+  - iface: ens34
+    cidr: 172.16.3.251/24
+  - iface: ens34
+    cidr: 172.16.3.252/24
+  - iface: ens34
+    cidr: 172.16.3.253/24
+  - iface: ens34
+    cidr: 172.16.3.254/24
+
+routes:
+  - cidr: 10.1.2.50
+    nexthop: 10.1.7.1
+
+docker:
+  - name: web1
+    image: nginx
+  - name: web2
+    image: nginx
+  - name: web3
+    image: nginx
+  - name: web4
+    image: nginx
