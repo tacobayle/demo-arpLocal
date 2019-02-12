@@ -1,14 +1,16 @@
 ---
+gitUrlBase: https://github.com/tacobayle/
+
+# destLocal: /home/avi/demo/arpLocal/
+
 repo:
-  - url: https://github.com/tacobayle/vyos.git
-    destLocal: /home/avi/demo/arpLocal/vyos
-    version: v1.04
-  - url: https://github.com/tacobayle/cs.git
-    destLocal: /home/avi/demo/arpLocal/cs
-    version: v1.00
-  - url: https://github.com/tacobayle/aviBootstrap.git
-    destLocal: /home/avi/demo/arpLocal/aviBootstrap
+  - name: aviLsc.git
     version: v1.01
-  - url: https://github.com/tacobayle/aviLscCloud.git
-    destLocal: /home/avi/demo/arpLocal/aviLscCloud
+  - name: vyos.git
+    version: v1.04
+  - name: cs.git
+    version: v1.01
+  - name: aviBootstrap.git
+    version: v1.06
+  - name: aviLscCloud.git
     version: v1.00

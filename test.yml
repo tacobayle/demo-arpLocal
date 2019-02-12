@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  gather_facts: no
+
+  vars_files:
+    - "vars/params.yml"
+
+  tasks:
+
+  - debug: var=playbook_dir

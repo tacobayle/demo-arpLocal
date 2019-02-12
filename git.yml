@@ -9,9 +9,9 @@
 
   - name: git checkout
     git:
-      repo: "{{ item.url }}"
-      dest: "{{ item.destLocal }}"
-      version: "{{ item.destLocal }}"
+      repo: "{{ gitUrlBase }}{{ item.name }}"
+      dest: "{{ playbook_dir }}/{{ item.name .split('.')[0] }}"
+      version: "{{ item.version }}"
       force: no
     ignore_errors: yes
     loop: "{{ repo }}"
