@@ -14,3 +14,5 @@ repo:
     version: v1.06
   - name: aviLscCloud.git
     version: v1.02
+  - name: aviAlerts.git
+    version: v1.00

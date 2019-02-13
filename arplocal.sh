@@ -16,6 +16,7 @@ cp vyos_arplocal.conf vyos/config.conf
 cp params_vyos.yml vyos/vars/params.yml
 cp params_cs cs/vars/params.yml
 cp params_aviLscCloud.yml aviLscCloud/vars/params.yml
+cp params_aviLscCloud.yml aviAlerts/vars/params.yml
 echo "#####################################"
 echo "Apply the configuration"
 cd aviLsc
@@ -28,5 +29,7 @@ cd ../aviBootstrap
 ansible-playbook -i hosts main.yml
 cd ../aviLscCloud
 ansible-playbook -i hosts main.yml
+cd ../aviAlerts
+ansible-playbook configureAlerts.yml
 cd ..
-rm -fr aviBootstrap aviLsc aviLscCloud cs vyos
+rm -fr aviBootstrap aviLsc aviLscCloud cs vyos aviAlerts

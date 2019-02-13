@@ -77,3 +77,5 @@ virtualservice:
     pool_ref: pool1
     vip: 10.1.2.50
     enable_rhi: false
+
+webhook_url: https://hooks.slack.com/services/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
