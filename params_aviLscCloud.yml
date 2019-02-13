@@ -15,6 +15,13 @@ cloud:
 
 vrfcontext:
   - name: global
+    gw:
+    - gateway_monitor_success_threshold: 15
+      gateway_ip:
+        type: V4
+        addr: 10.1.2.1
+      gateway_monitor_fail_threshold: 10
+      gateway_monitor_interval: 1000
     bgp_profile:
       peers:
       - keepalive_interval: 1

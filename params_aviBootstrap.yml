@@ -17,7 +17,7 @@ serviceenginegroup:
   - name: Default-Group
     ha_mode: HA_MODE_SHARED # N+M
     #ha_mode: HA_MODE_SHARED_PAIR # Active-Active
-    min_scaleout_per_vs: 1 # required for acitive active
+    min_scaleout_per_vs: 2 # required for acitive active
 
 credsJsonFile:
   - ../aviLscCloud/vars/creds.json

@@ -14,7 +14,7 @@ avi:
     binFile: /home/avi/bin/avi/docker_install-18.1.5-9249.tar.gz
   credentialsFile:
     - ../aviBootstrap/vars/creds.yml
-  version: 18.1.5
+  version: 17.2.14
   password: Avi_2019
 
 packageList:

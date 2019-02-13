@@ -28,3 +28,5 @@ cd ../aviBootstrap
 ansible-playbook -i hosts main.yml
 cd ../aviLscCloud
 ansible-playbook -i hosts main.yml
+cd ..
+rm -fr aviBootstrap aviLsc aviLscCloud cs vyos
