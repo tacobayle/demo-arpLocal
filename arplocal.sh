@@ -16,7 +16,7 @@ cp vyos_arplocal.conf vyos/config.conf
 cp params_vyos.yml vyos/vars/params.yml
 cp params_cs cs/vars/params.yml
 cp params_aviLscCloud.yml aviLscCloud/vars/params.yml
-cp params_aviLscCloud.yml aviAlerts/vars/params.yml
+cp params_aviAlerts.yml aviAlerts/vars/params.yml
 echo "#####################################"
 echo "Apply the configuration"
 cd aviLsc

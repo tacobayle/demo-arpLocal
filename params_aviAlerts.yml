@@ -1,0 +1,20 @@
+---
+webhook_url: https://hooks.slack.com/services/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
+
+alertscriptconfig:
+  action_script: |
+    #!/usr/bin/python
+    import json, requests
+    requests.packages.urllib3.disable_warnings()
+    webhook_url = "{{ webhook_url }}"
+    slack_data = {'text': "Your Virtual Service {{ item.0 }} is {{ item.1 }}"}
+
+    response = requests.post(
+        webhook_url, data=json.dumps(slack_data),
+        headers={'Content-Type': 'application/json'}
+    )
+    if response.status_code != 200:
+       raise ValueError(
+            'Request to slack returned an error %s, the response is:\n%s'
+            % (response.status_code, response.text)
+    )

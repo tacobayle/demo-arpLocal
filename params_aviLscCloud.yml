@@ -3,8 +3,38 @@ cloudconnectoruser:
   name: avi
   private_key: /home/avi/ssh/id_rsa
 
+dns:
+  name: dns-avi
+  domain:
+    name: demoavi.local
+
+network:
+  name: net-avi
+  dhcp_enabled: no
+  subnet:
+    - prefix:
+        mask: 24
+        ip_addr:
+          type: V4
+          addr: 10.1.2.0
+      static_ranges:
+        - begin:
+            type: V4
+            addr: 10.1.2.51
+          end:
+            type: V4
+            addr: 10.1.2.100
+
+
+
+ipam:
+  name: ipam-avi
+#  network: 0
+
 cloud:
   tenant_ref: admin
+  dns_provider_ref: dns-avi
+  ipam_provider_ref: ipam-avi
   se:
     cpu: 1
     mem: 1
@@ -70,12 +100,38 @@ avi_pool:
         iptype: 'V4'
       - ipaddr: 172.16.3.254
         iptype: 'V4'
+  - name: pool2
+    lb_algorithm: LB_ALGORITHM_ROUND_ROBIN
+    health_monitor_refs: hm1
+    servers:
+      - ipaddr: 172.16.3.251
+        iptype: 'V4'
+      - ipaddr: 172.16.3.252
+        iptype: 'V4'
 
 virtualservice:
-  - name: vs1
-    port: 80
-    pool_ref: pool1
-    vip: 10.1.2.50
-    enable_rhi: false
-
-webhook_url: https://hooks.slack.com/services/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
+  dns:
+    - name: vs1-dns
+      port: 53
+      vip: 10.1.2.50
+      enable_rhi: false
+      application_profile_ref: System-DNS
+      network_profile_ref: System-UDP-Per-Pkt
+  http:
+    - name: vs2-http
+      port: 80
+      pool_ref: pool1
+      enable_rhi: false
+      network_ref: net-avi
+      mask: 24
+      type: V4
+      addr: 10.1.2.0
+      fqdn: vs2.demoavi.local
+  https:
+    - name: vs3-https
+      enable_ssl: true
+      port: 443
+      pool_ref: pool2
+      fqdn: vs3.demoavi.local
+      ssl_profile_ref: System-Standard
+      ssl_key_and_certificate_refs: System-Default-Cert

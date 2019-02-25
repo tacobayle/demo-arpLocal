@@ -1,4 +1,9 @@
 ---
+
+dns:
+  iface: ens32
+  ip: 10.1.2.50
+
 ifconfigClient:
   - iface: ens33
     cidr: 10.1.7.2/24
@@ -14,7 +19,7 @@ ifconfigServer:
     cidr: 172.16.3.254/24
 
 routes:
-  - cidr: 10.1.2.50
+  - cidr: 10.1.2.0/24
     nexthop: 10.1.7.1
 
 docker:

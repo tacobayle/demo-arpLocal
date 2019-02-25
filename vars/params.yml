@@ -1,18 +1,16 @@
 ---
 gitUrlBase: https://github.com/tacobayle/
 
-# destLocal: /home/avi/demo/arpLocal/
-
 repo:
   - name: aviLsc.git
     version: v1.01
   - name: vyos.git
     version: v1.04
   - name: cs.git
-    version: v1.01
+    version: v1.02
   - name: aviBootstrap.git
     version: v1.06
   - name: aviLscCloud.git
-    version: v1.02
+    version: v1.03
   - name: aviAlerts.git
-    version: v1.00
+    version: v1.04
